@@ -77,3 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, stepTime);
     });
 });
+
+
+function toggleWhatsAppCard() {
+    const card = document.getElementById('whatsappCard');
+    const icon = document.getElementById('btnIcon');
+    const text = document.getElementById('btnText');
+
+    if (card.style.display === 'block') {
+        card.style.display = 'none';
+        icon.className = 'fa-brands fa-whatsapp';
+        text.style.display = 'inline-block';
+    } else {
+        card.style.display = 'block';
+        icon.className = 'fa-solid fa-xmark'; // Changes to 'X' close icon
+        text.style.display = 'none'; // Hides text prompt when card is open
+    }
+}
