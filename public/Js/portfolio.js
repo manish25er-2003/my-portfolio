@@ -1,11 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+    // 1. Mobile Menu Toggle & Icon Switcher
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
     if (hamburger && navLinks) {
+        const hamburgerIcon = hamburger.querySelector('i');
+
+        // Toggle mobile menu open/close
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+
+            // Switch icon between bars and close 'X'
+            if (hamburgerIcon) {
+                if (navLinks.classList.contains('active')) {
+                    hamburgerIcon.classList.remove('fa-bars');
+                    hamburgerIcon.classList.add('fa-xmark');
+                } else {
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Auto-close menu when a navigation link is clicked
+        const navItemsList = navLinks.querySelectorAll('.nav-link');
+        navItemsList.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('fa-xmark');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            });
         });
     }
 
@@ -51,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(skillSection);
     }
 
-    //document.addEventListener("DOMContentLoaded", () => {
+    // 4. Animated Counter Stats
     const statNums = document.querySelectorAll(".stat-num");
 
     statNums.forEach((stat) => {
@@ -78,19 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// 5. WhatsApp Widget Popup Toggle
 function toggleWhatsAppCard() {
     const card = document.getElementById('whatsappCard');
     const icon = document.getElementById('btnIcon');
     const text = document.getElementById('btnText');
 
+    if (!card) return;
+
     if (card.style.display === 'block') {
         card.style.display = 'none';
-        icon.className = 'fa-brands fa-whatsapp';
-        text.style.display = 'inline-block';
+        if (icon) icon.className = 'fa-brands fa-whatsapp';
+        if (text) text.style.display = 'inline-block';
     } else {
         card.style.display = 'block';
-        icon.className = 'fa-solid fa-xmark'; // Changes to 'X' close icon
-        text.style.display = 'none'; // Hides text prompt when card is open
+        if (icon) icon.className = 'fa-solid fa-xmark';
+        if (text) text.style.display = 'none';
     }
 }

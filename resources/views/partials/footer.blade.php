@@ -62,42 +62,40 @@
         </div>
     </div>
 </footer>
-
-
-<div class="whatsapp-wrapper">
+<div class="wa-wrapper">
     <!-- Chat Popup Window -->
-    <div class="whatsapp-card" id="whatsappCard">
-        <div class="card-header">
-            <div class="header-icon">
+    <div class="wa-card" id="whatsappCard">
+        <div class="wa-card-header">
+            <div class="wa-header-icon">
                 <i class="fa-brands fa-whatsapp"></i>
             </div>
-            <div class="header-text">
+            <div class="wa-header-text">
                 <h3>Start a Conversation</h3>
                 <p>Hi! Click below to chat on <strong>WhatsApp</strong></p>
             </div>
         </div>
 
-        <div class="card-body">
-            <p class="reply-time">The team typically replies in a few minutes.</p>
+        <div class="wa-card-body">
+            <p class="wa-reply-time">The team typically replies in a few minutes.</p>
 
             <!-- Direct Chat Link for Manish -->
-            <a href="https://wa.me/917087338600?text=hi%20manish" target="_blank" rel="noopener noreferrer" class="chat-member">
-                <div class="member-avatar">
+            <a href="https://wa.me/917087338600?text=hi%20manish" target="_blank" rel="noopener noreferrer" class="wa-chat-member">
+                <div class="wa-member-avatar">
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
-                <div class="member-info">
+                <div class="wa-member-info">
                     <h4>Manish</h4>
                     <p>Manish - Quick WhatsApp Chat</p>
                 </div>
-                <i class="fa-brands fa-whatsapp action-icon"></i>
+                <i class="fa-brands fa-whatsapp wa-action-icon"></i>
             </a>
         </div>
     </div>
 
     <!-- Main Floating Button -->
-    <button class="whatsapp-toggle-btn" id="whatsappToggleBtn" onclick="toggleWhatsAppCard()">
-        <span class="btn-text" id="btnText">Need Help? <strong>Chat with us</strong></span>
-        <div class="icon-circle">
+    <button class="wa-toggle-btn" id="whatsappToggleBtn" onclick="toggleWhatsAppCard()">
+        <span class="wa-btn-text" id="btnText">Need Help? <strong>Chat with us</strong></span>
+        <div class="wa-icon-circle">
             <i class="fa-brands fa-whatsapp" id="btnIcon"></i>
         </div>
     </button>
