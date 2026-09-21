@@ -3097,6 +3097,42 @@ textarea.form-input {
 }
 
 
+/* --- Floating WhatsApp Widget Styles --- */
+
+.wa-wrapper {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Chat Card Window */
+
+.wa-card {
+    display: none;
+    width: 320px;
+    background: #ffffff !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    animation: waFadeIn 0.3s ease-in-out;
+}
+
+@keyframes waFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* Header Section */
 
 .wa-card-header {
@@ -3192,20 +3228,31 @@ textarea.form-input {
 }
 
 
-/* Toggle Button */
+/* Button Container - Locks layout in place */
 
 .wa-toggle-btn {
     background: transparent !important;
     border: none !important;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-end;
     cursor: pointer;
     padding: 0;
     outline: none;
+    width: 60px;
+    /* Locked to icon size */
+    height: 60px;
+    margin-left: auto;
 }
 
+
+/* Text Pill Positioned Absolutely so it won't push the icon */
+
 .wa-btn-text {
+    position: absolute;
+    right: 72px;
+    /* Holds distance to the left of circular button */
     background-color: #ffffff !important;
     color: #333333 !important;
     padding: 10px 18px;
@@ -3213,22 +3260,28 @@ textarea.form-input {
     font-size: 14px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     white-space: nowrap;
+    pointer-events: none;
 }
 
+
+/* Icon Circle - Locked dimensions */
+
 .wa-icon-circle {
-    width: 60px;
-    height: 60px;
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
     background-color: #25d366 !important;
     color: #ffffff !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
 }
 
 .wa-toggle-btn:hover .wa-icon-circle {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }

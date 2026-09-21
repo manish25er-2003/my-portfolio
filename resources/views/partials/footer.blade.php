@@ -62,6 +62,8 @@
         </div>
     </div>
 </footer>
+
+
 <div class="wa-wrapper">
     <!-- Chat Popup Window -->
     <div class="wa-card" id="whatsappCard">
